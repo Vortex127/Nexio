@@ -43,44 +43,61 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-20 bg-gradient-subtle">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+    <section id="services" className="py-24 bg-gradient-card relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-glow opacity-30"></div>
+      <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-3xl animate-pulse-glow"></div>
+      <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-secondary/10 to-primary/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '3s' }}></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-display font-black text-foreground mb-8 animate-slide-up">
             Our Services
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
             Comprehensive software development services tailored to meet your unique business needs
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border-border/50">
-              <CardHeader className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4 group-hover:bg-primary/20 transition-colors duration-300">
-                  <service.icon className="w-8 h-8 text-primary" />
+            <div 
+              key={index} 
+              className="group animate-zoom-in" 
+              style={{ animationDelay: `${index * 0.1 + 0.3}s` }}
+            >
+              <div className="relative bg-gradient-card backdrop-blur-xl border border-border/30 rounded-3xl p-8 h-full transition-all duration-500 hover:shadow-floating hover:-translate-y-4 hover:border-primary/30 group">
+                {/* Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-glow rounded-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                
+                {/* Content */}
+                <div className="relative z-10">
+                  <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-sm rounded-2xl mb-8 group-hover:shadow-glow transition-all duration-500 group-hover:scale-110">
+                    <service.icon className="w-10 h-10 text-primary group-hover:text-primary-glow transition-colors duration-300" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-display font-bold text-card-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  
+                  <p className="text-muted-foreground mb-8 leading-relaxed text-base">
+                    {service.description}
+                  </p>
+                  
+                  <div className="space-y-3 mb-8">
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm mr-3 mb-2 border border-primary/20 hover:bg-primary/20 transition-colors duration-300">
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <Button variant="outline" className="w-full font-medium hover:shadow-glow transition-all duration-300 group-hover:border-primary/40">
+                    Learn More
+                  </Button>
                 </div>
-                <CardTitle className="text-xl font-bold text-card-foreground">
-                  {service.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <CardDescription className="text-muted-foreground mb-6 leading-relaxed">
-                  {service.description}
-                </CardDescription>
-                <div className="space-y-2 mb-6">
-                  {service.features.map((feature, idx) => (
-                    <span key={idx} className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm mr-2 mb-2">
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-                <Button variant="outline" className="w-full">
-                  Learn More
-                </Button>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>
