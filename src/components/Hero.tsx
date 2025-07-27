@@ -76,7 +76,7 @@ const Hero = () => {
           {/* Enhanced Stats */}
           <div className={`grid grid-cols-1 md:grid-cols-3 gap-12 mt-20 transition-all duration-1000 delay-1100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             <div className="text-center group">
-              <div className="relative inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary/30 to-primary/10 backdrop-blur-sm rounded-2xl mb-6 animate-float shadow-floating group-hover:shadow-intense transition-all duration-500 group-hover:scale-110">
+              <div className="relative inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary/30 to-primary/10 backdrop-blur-sm rounded-2xl mb-6 shadow-floating group-hover:shadow-intense transition-all duration-500 group-hover:scale-110">
                 <Code className="w-10 h-10 text-primary-glow" />
                 <div className="absolute inset-0 bg-gradient-glow rounded-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
               </div>
@@ -84,7 +84,7 @@ const Hero = () => {
               <p className="text-gray-300 font-medium">Projects Delivered</p>
             </div>
             <div className="text-center group">
-              <div className="relative inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-accent/30 to-accent/10 backdrop-blur-sm rounded-2xl mb-6 animate-float shadow-floating group-hover:shadow-intense transition-all duration-500 group-hover:scale-110" style={{ animationDelay: '2s' }}>
+              <div className="relative inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-accent/30 to-accent/10 backdrop-blur-sm rounded-2xl mb-6 shadow-floating group-hover:shadow-intense transition-all duration-500 group-hover:scale-110">
                 <Zap className="w-10 h-10 text-accent" />
                 <div className="absolute inset-0 bg-gradient-glow rounded-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
               </div>
@@ -92,7 +92,7 @@ const Hero = () => {
               <p className="text-gray-300 font-medium">Happy Clients</p>
             </div>
             <div className="text-center group">
-              <div className="relative inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-secondary/30 to-secondary/10 backdrop-blur-sm rounded-2xl mb-6 animate-float shadow-floating group-hover:shadow-intense transition-all duration-500 group-hover:scale-110" style={{ animationDelay: '4s' }}>
+              <div className="relative inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-secondary/30 to-secondary/10 backdrop-blur-sm rounded-2xl mb-6 shadow-floating group-hover:shadow-intense transition-all duration-500 group-hover:scale-110">
                 <Users className="w-10 h-10 text-secondary" />
                 <div className="absolute inset-0 bg-gradient-glow rounded-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
               </div>
