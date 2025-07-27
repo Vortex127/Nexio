@@ -2,14 +2,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Target, Users2, Lightbulb } from "lucide-react";
 
-const About = () => {
+const Vision = () => {
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="vision" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              About Nexio Technologies
+              Our Vision
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Founded with a vision to bridge the gap between innovative technology and business success, 
@@ -35,7 +35,7 @@ const About = () => {
               </div>
             </div>
             
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mb-8">
               <Badge variant="secondary">React</Badge>
               <Badge variant="secondary">Node.js</Badge>
               <Badge variant="secondary">Python</Badge>
@@ -43,6 +43,11 @@ const About = () => {
               <Badge variant="secondary">Docker</Badge>
               <Badge variant="secondary">Kubernetes</Badge>
             </div>
+            <a href="/about" className="inline-block">
+              <button className="px-6 py-2 rounded-lg bg-primary text-white font-semibold shadow hover:bg-primary/90 transition-colors duration-200">
+                Learn More
+              </button>
+            </a>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -92,4 +97,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Vision;

@@ -8,6 +8,13 @@ import AboutUs from "./pages/AboutUs";
 import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
+import Vision from "./components/Vision"; // Updated import to match new file structure
+import WebDevelopment from "./pages/WebDevelopment";
+import MobileDevelopment from "./pages/MobileDevelopment";
+import CloudSolutions from "./pages/CloudSolutions";
+import DataEngineering from "./pages/DataEngineering";
+import Cybersecurity from "./pages/Cybersecurity";
+import AIMachineLearning from "./pages/AIMachineLearning";
 
 const queryClient = new QueryClient();
 
@@ -19,9 +26,16 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/about" element={<AboutUs />} />
+          <Route path="/vision" element={<Vision />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/webdevelopment" element={<WebDevelopment />} />
+          <Route path="/mobiledevelopment" element={<MobileDevelopment />} />
+          <Route path="/cloudsolutions" element={<CloudSolutions />} />
+          <Route path="/dataengineering" element={<DataEngineering />} />
+          <Route path="/cybersecurity" element={<Cybersecurity />} />
+          <Route path="/aimachinelearning" element={<AIMachineLearning />} />
+          <Route path="/about" element={<AboutUs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
