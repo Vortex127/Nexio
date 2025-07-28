@@ -12,11 +12,10 @@ const scrollToSection = (id) => {
 };
 
 const navItems = [
-  { label: "Services", id: "services", hash: "#services" },
-  { label: "Portfolio", id: "portfolio", hash: "#portfolio" },
-  { label: "Vision", id: "vision", hash: "#about" },
+  { label: "Home", path: "/" },
   { label: "About", path: "/about" },
-  { label: "Testimonials", id: "testimonials", hash: "#testimonials" },
+  { label: "Careers", path: "/careers" },
+  { label: "Blog", path: "/blog" },
   { label: "Contact", id: "contact", hash: "#contact" },
 ];
 
@@ -33,13 +32,14 @@ const Header = () => {
     } else if (location.pathname === "/about") {
       setActive("about");
     } else if (location.pathname === "/") {
-      setActive("");
+      setActive("home");
     }
   }, [location]);
 
   // Listen for scroll to update active section
   useEffect(() => {
     if (location.pathname !== "/") return;
+    setActive("home");
     const handleScroll = () => {
       const sections = ["services", "portfolio", "vision", "testimonials", "contact"];
       let found = "";
@@ -63,7 +63,12 @@ const Header = () => {
     e.preventDefault();
     if (path) {
       navigate(path);
-      setActive("about");
+      setTimeout(() => {
+        if (id !== "contact") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }, 0);
+      setActive(path === "/about" ? "about" : path === "/careers" ? "careers" : path === "/blog" ? "blog" : "home");
     } else if (location.pathname !== "/") {
       navigate(`/#${id}`);
       setActive(id);
@@ -90,11 +95,11 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.path}
-                className={`relative text-muted-foreground hover:text-primary transition-all duration-300 font-medium group px-3 py-2 rounded-lg hover:bg-primary/5 ${active === "about" ? "text-primary bg-primary/10" : ""}`}
+                className={`relative text-muted-foreground hover:text-primary transition-all duration-300 font-medium group px-3 py-2 rounded-lg hover:bg-primary/5 ${active === item.label.toLowerCase() ? "text-primary bg-primary/10" : ""}`}
                 onClick={e => handleNav(e, undefined, item.path)}
               >
                 {item.label}
-                <span className={`absolute -bottom-1 left-3 h-0.5 bg-gradient-primary transition-all duration-300 ${active === "about" ? "w-[calc(100%-24px)]" : "w-0"}`}></span>
+                <span className={`absolute -bottom-1 left-3 h-0.5 bg-gradient-primary transition-all duration-300 ${active === item.label.toLowerCase() ? "w-[calc(100%-24px)]" : "w-0"}`}></span>
               </a>
             ) : (
               <a
