@@ -1,6 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Sun, Moon } from "lucide-react";
 
 const scrollToSection = (id) => {
   setTimeout(() => {
@@ -19,10 +20,20 @@ const navItems = [
   { label: "Contact", id: "contact", hash: "#contact" },
 ];
 
+const getInitialTheme = () => {
+  if (typeof window !== "undefined" && window.localStorage) {
+    const stored = window.localStorage.getItem("theme");
+    if (stored) return stored;
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
+  }
+  return "light";
+};
+
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [active, setActive] = useState("");
+  const [theme, setTheme] = useState(getInitialTheme());
 
   // Listen for hash in location and scroll
   useEffect(() => {
@@ -78,6 +89,12 @@ const Header = () => {
     }
   };
 
+  useEffect(() => {
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
+    window.localStorage.setItem("theme", theme);
+  }, [theme]);
+
   return (
     <header className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-xl border-b border-border/50 shadow-floating">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
@@ -114,6 +131,13 @@ const Header = () => {
             )
           ))}
         </nav>
+        <button
+          aria-label="Toggle theme"
+          className="mr-4 p-2 rounded-full bg-background border border-border hover:bg-primary/10 transition-colors duration-200"
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        >
+          {theme === "dark" ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-blue-600" />}
+        </button>
         <Button
           variant="hero"
           size="sm"

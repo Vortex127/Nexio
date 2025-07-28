@@ -86,7 +86,7 @@ const Testimonials = () => {
   ]
 
   return (
-    <section id="testimonials" className="py-20 bg-gray-50">
+    <section id="testimonials" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -95,13 +95,13 @@ const Testimonials = () => {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full text-sm font-semibold mb-6">
+            <span className="inline-block px-4 py-2 bg-gradient-primary text-primary-foreground rounded-full text-sm font-semibold mb-6">
               Client Stories
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What Our <span className="text-blue-600">Clients Say</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              What Our <span className="text-primary">Clients Say</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Don't just take our word for it. Here's what industry leaders say about working with Nexio Technologies.
             </p>
           </div>
@@ -118,17 +118,17 @@ const Testimonials = () => {
 
         {/* Simple stats */}
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center space-x-8 text-sm text-gray-600">
+          <div className="inline-flex items-center space-x-8 text-sm text-muted-foreground">
             <div>
-              <span className="font-semibold text-blue-600">500+</span> Happy Clients
+              <span className="font-semibold text-primary">500+</span> Happy Clients
             </div>
-            <div className="w-px h-4 bg-gray-300"></div>
+            <div className="w-px h-4 bg-border"></div>
             <div>
-              <span className="font-semibold text-blue-600">98%</span> Satisfaction Rate
+              <span className="font-semibold text-primary">98%</span> Satisfaction Rate
             </div>
-            <div className="w-px h-4 bg-gray-300"></div>
+            <div className="w-px h-4 bg-border"></div>
             <div>
-              <span className="font-semibold text-blue-600">100+</span> 5-Star Reviews
+              <span className="font-semibold text-primary">100+</span> 5-Star Reviews
             </div>
           </div>
         </div>

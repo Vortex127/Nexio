@@ -29,7 +29,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
     setTimeout(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
       setSlideDirection(null)
-    }, 180)
+    }, 300)
   }, [testimonials.length])
 
   const prevSlide = useCallback(() => {
@@ -37,7 +37,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
     setTimeout(() => {
       setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length)
       setSlideDirection(null)
-    }, 180)
+    }, 300)
   }, [testimonials.length])
 
   const goToSlide = (index: number) => {
@@ -45,7 +45,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
     setTimeout(() => {
       setCurrentIndex(index)
       setSlideDirection(null)
-    }, 180)
+    }, 300)
   }
 
   // Auto-play functionality
@@ -63,23 +63,23 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
       {/* Main Carousel Card */}
       <div className="relative h-[420px] flex items-center justify-center">
         <Card
-          className={`bg-white shadow-lg border border-gray-100 hover:shadow-xl absolute w-full transition-all ease-in-out duration-500
+          className={`bg-card shadow-lg border-border hover:shadow-xl absolute w-full transition-all ease-in-out duration-300
             ${slideDirection === 'right' ? 'animate-slide-left' : ''}
             ${slideDirection === 'left' ? 'animate-slide-right' : ''}
           `}
           style={{
-            opacity: slideDirection ? 0.7 : 1,
+            opacity: slideDirection ? 0 : 1,
           }}
         >
           <CardContent className="p-8 relative">
             {/* Subtle quote icon */}
-            <div className="absolute top-6 right-6 text-gray-200">
+            <div className="absolute top-6 right-6 text-muted-foreground/20">
               <Quote className="w-8 h-8" />
             </div>
 
             {/* Project type badge */}
             <div className="mb-6">
-              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
+              <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide">
                 {currentTestimonial.projectType}
               </span>
             </div>
@@ -89,30 +89,30 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
               {[...Array(currentTestimonial.rating)].map((_, i) => (
                 <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
               ))}
-              <span className="ml-2 text-sm text-gray-500 font-medium">5.0</span>
+              <span className="ml-2 text-sm text-muted-foreground font-medium">5.0</span>
             </div>
 
             {/* Content */}
-            <blockquote className="text-gray-700 text-lg leading-relaxed mb-8 font-medium italic">
+            <blockquote className="text-foreground/80 text-lg leading-relaxed mb-8 font-medium italic">
               "{currentTestimonial.content}"
             </blockquote>
 
             {/* Author */}
-            <div className="flex items-center space-x-4 pt-6 border-t border-gray-100">
+            <div className="flex items-center space-x-4 pt-6 border-t border-border">
               <img
                 src={currentTestimonial.image || "/placeholder.svg"}
                 alt={currentTestimonial.name}
-                className="w-12 h-12 rounded-full object-cover ring-2 ring-gray-100"
+                className="w-12 h-12 rounded-full object-cover ring-2 ring-border"
               />
               <div>
-                <h4 className="font-semibold text-gray-900">{currentTestimonial.name}</h4>
-                <p className="text-sm text-gray-600">{currentTestimonial.position}</p>
-                <p className="text-sm text-blue-600 font-medium">{currentTestimonial.company}</p>
+                <h4 className="font-semibold text-foreground">{currentTestimonial.name}</h4>
+                <p className="text-sm text-muted-foreground">{currentTestimonial.position}</p>
+                <p className="text-sm text-primary font-medium">{currentTestimonial.company}</p>
               </div>
             </div>
 
             {/* Subtle accent line */}
-            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 opacity-20"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-primary opacity-20"></div>
           </CardContent>
         </Card>
       </div>
@@ -122,7 +122,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
         onClick={prevSlide}
         variant="outline"
         size="sm"
-        className="absolute -left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border-gray-200 hover:border-blue-300 hover:text-blue-600 shadow-md hover:shadow-lg transition-all duration-200"
+        className="absolute -left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-card border-border hover:border-primary/50 hover:text-primary shadow-md hover:shadow-lg transition-all duration-200"
       >
         <ChevronLeft className="w-4 h-4" />
       </Button>
@@ -131,7 +131,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
         onClick={nextSlide}
         variant="outline"
         size="sm"
-        className="absolute -right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border-gray-200 hover:border-blue-300 hover:text-blue-600 shadow-md hover:shadow-lg transition-all duration-200"
+        className="absolute -right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-card border-border hover:border-primary/50 hover:text-primary shadow-md hover:shadow-lg transition-all duration-200"
       >
         <ChevronRight className="w-4 h-4" />
       </Button>
@@ -144,8 +144,8 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
             onClick={() => goToSlide(index)}
             className={`h-2 rounded-full transition-all duration-300 ${
               index === currentIndex
-                ? "bg-gradient-to-r from-blue-600 to-purple-600 w-8"
-                : "bg-gray-300 hover:bg-gray-400 w-2"
+                ? "bg-gradient-primary w-8"
+                : "bg-muted-foreground/20 hover:bg-muted-foreground/40 w-2"
             }`}
           />
         ))}
@@ -153,7 +153,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
 
       {/* Progress indicator */}
       <div className="mt-4 text-center">
-        <span className="text-xs text-gray-500 font-medium">
+        <span className="text-xs text-muted-foreground font-medium">
           {currentIndex + 1} of {testimonials.length}
         </span>
       </div>
@@ -161,17 +161,17 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
       <style jsx>{`
         @keyframes slideLeft {
           0% { transform: translateX(0); opacity: 1; }
-          100% { transform: translateX(-60px); opacity: 0.7; }
+          100% { transform: translateX(-60px); opacity: 0; }
         }
         @keyframes slideRight {
           0% { transform: translateX(0); opacity: 1; }
-          100% { transform: translateX(60px); opacity: 0.7; }
+          100% { transform: translateX(60px); opacity: 0; }
         }
         .animate-slide-left {
-          animation: slideLeft 0.18s forwards;
+          animation: slideLeft 0.3s forwards;
         }
         .animate-slide-right {
-          animation: slideRight 0.18s forwards;
+          animation: slideRight 0.3s forwards;
         }
       `}</style>
     </div>
