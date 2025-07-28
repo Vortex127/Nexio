@@ -1,23 +1,81 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { Cloud, Server, Database, Lock, BarChart3, Cog } from "lucide-react"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
+import ServiceHero from "@/components/service-hero"
+import ServiceDetails from "@/components/service-details"
+import ServiceCTA from "@/components/service-cta"
 
-const CloudSolutions = () => (
-  <div className="min-h-screen">
-    <Header />
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">Cloud Solutions</h1>
-        <p className="text-lg text-muted-foreground mb-8">Scalable cloud infrastructure and deployment strategies for modern applications.</p>
-        <ul className="list-disc pl-6 text-muted-foreground mb-8">
-          <li>AWS & Azure</li>
-          <li>DevOps</li>
-          <li>Microservices</li>
-        </ul>
-        <p>Our cloud experts help you leverage the power of the cloud for agility, scalability, and cost savings.</p>
-      </div>
-    </section>
-    <Footer />
-  </div>
-);
+const CloudSolutions = () => {
+  const benefits = [
+    {
+      title: "AWS & Azure Expertise",
+      description: "Certified professionals with deep knowledge of leading cloud platforms.",
+      icon: <Cloud className="w-6 h-6 text-blue-600" />,
+    },
+    {
+      title: "DevOps Integration",
+      description: "Streamlined CI/CD pipelines and automated deployment processes.",
+      icon: <Cog className="w-6 h-6 text-blue-600" />,
+    },
+    {
+      title: "Microservices Architecture",
+      description: "Scalable, maintainable applications with containerized microservices.",
+      icon: <Server className="w-6 h-6 text-blue-600" />,
+    },
+    {
+      title: "Data Management",
+      description: "Robust database solutions with backup, recovery, and optimization.",
+      icon: <Database className="w-6 h-6 text-blue-600" />,
+    },
+    {
+      title: "Security First",
+      description: "Enterprise-grade security with encryption, monitoring, and compliance.",
+      icon: <Lock className="w-6 h-6 text-blue-600" />,
+    },
+    {
+      title: "Cost Optimization",
+      description: "Smart resource allocation and monitoring to minimize cloud costs.",
+      icon: <BarChart3 className="w-6 h-6 text-blue-600" />,
+    },
+  ]
 
-export default CloudSolutions;
+  const processSteps = [
+    {
+      step: 1,
+      title: "Assessment",
+      description: "Current infrastructure analysis and requirements",
+    },
+    {
+      step: 2,
+      title: "Architecture",
+      description: "Cloud strategy and solution design",
+    },
+    {
+      step: 3,
+      title: "Migration",
+      description: "Seamless transition to cloud infrastructure",
+    },
+    {
+      step: 4,
+      title: "Optimization",
+      description: "Performance tuning and cost optimization",
+    },
+  ]
+
+  return (
+    <div className="min-h-screen">
+      <Header />
+      <ServiceHero
+        title="Cloud Solutions"
+        description="Scalable cloud infrastructure and deployment strategies for modern applications."
+        features={["AWS & Azure", "DevOps", "Microservices"]}
+        icon={<Cloud className="w-12 h-12 text-white" />}
+      />
+      <ServiceDetails benefits={benefits} processSteps={processSteps} />
+      <ServiceCTA />
+      <Footer />
+    </div>
+  )
+}
+
+export default CloudSolutions
