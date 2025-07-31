@@ -25,37 +25,37 @@ const navItems = [
 const services = [
   {
     title: "Web Development",
-    path: "/web-development",
+    path: "/WebDevelopment",
     description: "Custom web applications with modern tech.",
     icon: Code,
   },
   {
     title: "AI & Machine Learning",
-    path: "/ai-machine-learning",
+    path: "/AIMachineLearning",
     description: "Intelligent solutions to automate and optimize.",
     icon: Brain,
   },
   {
     title: "Cloud Solutions",
-    path: "/cloud-solutions",
+    path: "/CloudSolutions",
     description: "Scalable cloud infrastructure and strategies.",
     icon: Cloud,
   },
   {
     title: "Cybersecurity",
-    path: "/cybersecurity",
+    path: "/Cybersecurity",
     description: "Protect your digital assets and user data.",
     icon: Shield,
   },
   {
     title: "Data Engineering",
-    path: "/data-engineering",
+    path: "/DataEngineering",
     description: "Robust data pipelines and analytics solutions.",
     icon: Database,
   },
   {
     title: "Mobile Development",
-    path: "/mobile-development",
+    path: "/MobileDevelopment",
     description: "Native and cross-platform mobile apps.",
     icon: Smartphone,
   },
