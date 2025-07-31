@@ -10,32 +10,32 @@ const AIMachineLearning = () => {
     {
       title: "Custom AI Models",
       description: "Tailored machine learning models designed specifically for your business needs.",
-      icon: <Brain className="w-6 h-6 text-blue-600" />,
+      icon: Brain,
     },
     {
       title: "Process Automation",
       description: "Intelligent automation to streamline operations and reduce manual work.",
-      icon: <Cog className="w-6 h-6 text-blue-600" />,
+      icon: Cog,
     },
     {
       title: "Predictive Analytics",
       description: "Advanced algorithms to forecast trends and optimize business decisions.",
-      icon: <BarChart3 className="w-6 h-6 text-blue-600" />,
+      icon: BarChart3,
     },
     {
       title: "High Performance",
       description: "Optimized models with GPU acceleration and distributed computing.",
-      icon: <Cpu className="w-6 h-6 text-blue-600" />,
+      icon: Cpu,
     },
     {
       title: "Precision Targeting",
       description: "Enhanced customer segmentation and personalization capabilities.",
-      icon: <Target className="w-6 h-6 text-blue-600" />,
+      icon: Target,
     },
     {
       title: "Real-time Processing",
       description: "Lightning-fast inference and real-time decision making systems.",
-      icon: <Zap className="w-6 h-6 text-blue-600" />,
+      icon: Zap,
     },
   ]
 
@@ -63,7 +63,7 @@ const AIMachineLearning = () => {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Header />
       <ServiceHero
         title="AI & Machine Learning"

@@ -10,32 +10,32 @@ const Cybersecurity = () => {
     {
       title: "Security Audits",
       description: "Comprehensive security assessments to identify vulnerabilities and risks.",
-      icon: <Eye className="w-6 h-6 text-blue-600" />,
+      icon: Eye,
     },
     {
       title: "Penetration Testing",
       description: "Ethical hacking to test your defenses and strengthen security posture.",
-      icon: <AlertTriangle className="w-6 h-6 text-blue-600" />,
+      icon: AlertTriangle,
     },
     {
       title: "Compliance Support",
       description: "Meet regulatory requirements with GDPR, HIPAA, and industry standards.",
-      icon: <CheckCircle className="w-6 h-6 text-blue-600" />,
+      icon: CheckCircle,
     },
     {
       title: "Data Protection",
       description: "Advanced encryption and secure data handling practices.",
-      icon: <Lock className="w-6 h-6 text-blue-600" />,
+      icon: Lock,
     },
     {
       title: "Threat Monitoring",
       description: "24/7 monitoring and incident response for proactive security.",
-      icon: <Shield className="w-6 h-6 text-blue-600" />,
+      icon: Shield,
     },
     {
       title: "Security Training",
       description: "Employee education and awareness programs to prevent breaches.",
-      icon: <Users className="w-6 h-6 text-blue-600" />,
+      icon: Users,
     },
   ]
 
@@ -63,7 +63,7 @@ const Cybersecurity = () => {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Header />
       <ServiceHero
         title="Cybersecurity"

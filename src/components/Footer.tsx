@@ -15,9 +15,6 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-background/70 hover:text-background transition-colors duration-300">
-                <Github className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-background/70 hover:text-background transition-colors duration-300">
                 <Linkedin className="w-5 h-5" />
               </a>
               <a href="#" className="text-background/70 hover:text-background transition-colors duration-300">

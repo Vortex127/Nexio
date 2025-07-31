@@ -1,10 +1,11 @@
-import type { ReactNode } from "react"
+import type { ElementType } from "react"
+import { Card, CardContent } from "./ui/card"
 
 interface ServiceDetailsProps {
   benefits: Array<{
     title: string
     description: string
-    icon: ReactNode
+    icon: ElementType
   }>
   processSteps: Array<{
     step: number
@@ -15,48 +16,67 @@ interface ServiceDetailsProps {
 
 export default function ServiceDetails({ benefits, processSteps }: ServiceDetailsProps) {
   return (
-    <div className="py-24 bg-gray-50">
-      <div className="container mx-auto px-6">
-        {/* Benefits Section */}
-        <div className="mb-20">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Our Solutions?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We deliver exceptional results through proven methodologies and cutting-edge technology
+    <>
+      {/* Benefits Section */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
+              Why Choose Our <span className="text-primary">Solutions?</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              We deliver exceptional results through proven methodologies and cutting-edge technology.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="mb-6 p-3 bg-blue-100 rounded-lg w-fit">{benefit.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{benefit.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
-              </div>
+              <Card key={index} className="group border-0 shadow-card bg-gradient-card backdrop-blur-sm hover:shadow-floating hover:scale-105 transition-all duration-500">
+                <CardContent className="p-8 text-center">
+                  <div className="relative inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <benefit.icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-display font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Process Section */}
-        <div>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Process</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A systematic approach to deliver outstanding results
+      {/* Process Section */}
+      <section className="py-24 bg-gradient-subtle">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
+              Our <span className="text-accent">Process</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              A systematic approach to deliver outstanding results.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="mb-6 mx-auto w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  {step.step}
+          <div className="relative max-w-5xl mx-auto">
+            {/* Dotted line connector for larger screens */}
+            <div className="hidden lg:block absolute top-8 left-0 h-full w-full">
+              <div className="h-full w-full border-t-2 border-dashed border-accent/30"></div>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+              {processSteps.map((step, index) => (
+                <div key={index} className="text-center relative px-4">
+                  <div className="relative inline-flex items-center justify-center w-16 h-16 bg-gradient-card rounded-full mb-6 ring-8 ring-background/80 backdrop-blur-sm">
+                    <span className="text-2xl font-bold text-accent">{step.step}</span>
+                  </div>
+                  <h3 className="text-xl font-display font-bold text-foreground mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground">{step.description}</p>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   )
 }

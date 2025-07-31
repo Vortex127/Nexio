@@ -10,32 +10,32 @@ const CloudSolutions = () => {
     {
       title: "AWS & Azure Expertise",
       description: "Certified professionals with deep knowledge of leading cloud platforms.",
-      icon: <Cloud className="w-6 h-6 text-blue-600" />,
+      icon: Cloud,
     },
     {
       title: "DevOps Integration",
       description: "Streamlined CI/CD pipelines and automated deployment processes.",
-      icon: <Cog className="w-6 h-6 text-blue-600" />,
+      icon: Cog,
     },
     {
       title: "Microservices Architecture",
       description: "Scalable, maintainable applications with containerized microservices.",
-      icon: <Server className="w-6 h-6 text-blue-600" />,
+      icon: Server,
     },
     {
       title: "Data Management",
       description: "Robust database solutions with backup, recovery, and optimization.",
-      icon: <Database className="w-6 h-6 text-blue-600" />,
+      icon: Database,
     },
     {
       title: "Security First",
       description: "Enterprise-grade security with encryption, monitoring, and compliance.",
-      icon: <Lock className="w-6 h-6 text-blue-600" />,
+      icon: Lock,
     },
     {
       title: "Cost Optimization",
       description: "Smart resource allocation and monitoring to minimize cloud costs.",
-      icon: <BarChart3 className="w-6 h-6 text-blue-600" />,
+      icon: BarChart3,
     },
   ]
 
@@ -63,7 +63,7 @@ const CloudSolutions = () => {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Header />
       <ServiceHero
         title="Cloud Solutions"

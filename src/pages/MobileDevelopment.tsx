@@ -1,4 +1,4 @@
-import { Smartphone, Apple, SmartphoneIcon as Android, Zap, Users, Shield } from "lucide-react"
+import { Smartphone, Apple, Smartphone as Android, Zap, Users, Shield } from "lucide-react"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import ServiceHero from "@/components/service-hero"
@@ -10,32 +10,32 @@ const MobileDevelopment = () => {
     {
       title: "Cross-Platform",
       description: "Develop once, deploy everywhere with React Native and Flutter for maximum reach.",
-      icon: <Smartphone className="w-6 h-6 text-blue-600" />,
+      icon: Smartphone,
     },
     {
       title: "Native Performance",
       description: "Optimized performance that feels native on both iOS and Android platforms.",
-      icon: <Zap className="w-6 h-6 text-blue-600" />,
+      icon: Zap,
     },
     {
       title: "iOS Excellence",
       description: "Native iOS development following Apple's design guidelines and best practices.",
-      icon: <Apple className="w-6 h-6 text-blue-600" />,
+      icon: Apple,
     },
     {
       title: "Android Expertise",
       description: "Material Design implementation with Android-specific optimizations.",
-      icon: <Android className="w-6 h-6 text-blue-600" />,
+      icon: Android,
     },
     {
       title: "User Engagement",
       description: "Push notifications, offline capabilities, and engaging user experiences.",
-      icon: <Users className="w-6 h-6 text-blue-600" />,
+      icon: Users,
     },
     {
       title: "App Store Ready",
       description: "Complete deployment support for both App Store and Google Play Store.",
-      icon: <Shield className="w-6 h-6 text-blue-600" />,
+      icon: Shield,
     },
   ]
 
@@ -63,7 +63,7 @@ const MobileDevelopment = () => {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Header />
       <ServiceHero
         title="Mobile Development"

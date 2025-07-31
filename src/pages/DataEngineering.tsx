@@ -10,32 +10,32 @@ const DataEngineering = () => {
     {
       title: "Big Data Processing",
       description: "Handle massive datasets with distributed computing and modern data lakes.",
-      icon: <Database className="w-6 h-6 text-blue-600" />,
+      icon: Database,
     },
     {
       title: "Real-time Analytics",
       description: "Stream processing and real-time dashboards for immediate insights.",
-      icon: <Zap className="w-6 h-6 text-blue-600" />,
+      icon: Zap,
     },
     {
       title: "ML/AI Integration",
       description: "Seamless integration with machine learning models and AI workflows.",
-      icon: <Brain className="w-6 h-6 text-blue-600" />,
+      icon: Brain,
     },
     {
       title: "Data Visualization",
       description: "Interactive dashboards and reports for data-driven decision making.",
-      icon: <BarChart3 className="w-6 h-6 text-blue-600" />,
+      icon: BarChart3,
     },
     {
       title: "Data Security",
       description: "Encryption, access controls, and compliance with data protection regulations.",
-      icon: <Shield className="w-6 h-6 text-blue-600" />,
+      icon: Shield,
     },
     {
       title: "Predictive Analytics",
       description: "Forecast trends and patterns to drive strategic business decisions.",
-      icon: <TrendingUp className="w-6 h-6 text-blue-600" />,
+      icon: TrendingUp,
     },
   ]
 
@@ -63,7 +63,7 @@ const DataEngineering = () => {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Header />
       <ServiceHero
         title="Data Engineering"

@@ -10,32 +10,32 @@ const WebDevelopment = () => {
     {
       title: "Modern Technologies",
       description: "Built with React, Next.js, and cutting-edge frameworks for optimal performance and scalability.",
-      icon: <Code className="w-6 h-6 text-blue-600" />,
+      icon: Code,
     },
     {
       title: "Responsive Design",
       description: "Seamless experience across all devices with mobile-first approach and adaptive layouts.",
-      icon: <Smartphone className="w-6 h-6 text-blue-600" />,
+      icon: Smartphone,
     },
     {
       title: "Lightning Fast",
       description: "Optimized for speed with advanced caching, CDN integration, and performance monitoring.",
-      icon: <Zap className="w-6 h-6 text-blue-600" />,
+      icon: Zap,
     },
     {
       title: "Secure & Reliable",
       description: "Enterprise-grade security measures and robust architecture for maximum uptime.",
-      icon: <Shield className="w-6 h-6 text-blue-600" />,
+      icon: Shield,
     },
     {
       title: "User-Centric",
       description: "Intuitive interfaces designed with user experience and accessibility in mind.",
-      icon: <Users className="w-6 h-6 text-blue-600" />,
+      icon: Users,
     },
     {
       title: "Scalable Solutions",
       description: "Built to grow with your business, handling increased traffic and feature expansion.",
-      icon: <Rocket className="w-6 h-6 text-blue-600" />,
+      icon: Rocket,
     },
   ]
 
@@ -63,7 +63,7 @@ const WebDevelopment = () => {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Header />
       <ServiceHero
         title="Web Development"
