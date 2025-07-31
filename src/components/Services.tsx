@@ -48,12 +48,12 @@ const services = [
 ];
 
 const serviceLinks = [
-	"/webdevelopment",
-	"/mobiledevelopment",
-	"/cloudsolutions",
-	"/dataengineering",
-	"/cybersecurity",
-	"/aimachinelearning",
+	"/WebDevelopment",
+	"/MobileDevelopment",
+	"/CloudSolutions",
+	"/DataEngineering",
+	"/Cybersecurity",
+	"/AIMachineLearning",
 ];
 
 const Services = () => {
